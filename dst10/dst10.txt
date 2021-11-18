@@ -1,0 +1,12 @@
+Valitsin  keko tietorakenteen tähän tehtävään. Keko on tietorakenne jossa keon pienin tai suurin
+arvo on aina helposti saatavilla. On siis kahden tyyppisiä kekoja minimi ja maksimi kekoja. Keko
+voidaan mieltää yhten' tai useampana binääripuuna mutta todellisuudessa se tallennetaan usein
+taulukkona. Keon muodostuminen voidaan määritellä seuraavasti: Solmun avain on aina vähintään yhtä
+suuri kuin se sen lapsisolmujen avaimet (maksimikeko). Tästä seuraa että keon juuri on aina myös keon
+suurin arvo.
+
+Kekoa hyödynnetään esimerkiksi prioriteetti jono rakentamisessa.
+
+Otin myös jonkin verran selvää tensorista mutta asia oli sen verran laaja kokonaisuus että perehdyn
+siihen pikkuhiljaa ajan kanssa. Kyse on kuitenkin ilmeisesti moniulotteisesta taulukosta jota hyö-
+dynnetään esim. neuroverkoissa.

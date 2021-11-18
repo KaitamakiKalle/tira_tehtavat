@@ -1,0 +1,69 @@
+console.log() tuloste
+
+Node {
+  compare: [Function: defaultComparator],
+  right: Node {
+    compare: [Function: defaultComparator],
+    right: null,
+    left: Node {
+      compare: [Function: defaultComparator],
+      right: [Node],
+      left: null,
+      value: 12
+    },
+    value: 23
+  },
+  left: Node {
+    compare: [Function: defaultComparator],
+    right: Node {
+      compare: [Function: defaultComparator],
+      right: null,
+      left: [Node],
+      value: 6
+    },
+    left: Node {
+      compare: [Function: defaultComparator],
+      right: null,
+      left: null,
+      value: 1
+    },
+    value: 2
+  },
+  value: 10
+}
+depthFirst search
+10
+2
+1
+6
+5
+23
+12
+21
+breadFirst search
+10
+2
+23
+1
+6
+12
+5
+21
+
+Binääripuu piirrettynä. Rakenne selviää tutkimalla console.loog tulostetta.
+
+                  10
+                /    \
+               2      23
+              / \    /
+             1   6  12     
+                /     \
+               5       21
+
+depthFirst haku palauttaa kyseisen tuloksen koska se toimii niin että läpikäynti aloitetaan
+puun syvimmästä solmusta. Jos tällä solmulla on sisaruksia käydään ensin niissä ja sen jälkeen siir-
+rytään äiti solmuun. Jos sisarsolmuja ei ole siirrytään suoraan äitisolmuun.
+
+breadthFirst palauttaa kyseisen tuloksen koska solmut käydään ikäänkuin riveittäin tai 
+kerroksittain läpi. Ensimmäisenä ollaan juuressa (tässä tapauksessa 10) jonka jälkeen siirrytään 
+seuraavalle "tasolle" (2 ja 23) jne.
