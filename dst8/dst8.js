@@ -16,6 +16,7 @@ const values = [
 const createGraph = function (values) {
   const graph = new Graph();
   values.forEach((elem) => {
+    // addEdge metodi lisää edgen nodejen välille ja luo nodet jossei niitä vielä ole olemassa.
     graph.addEdge(...elem);
   });
   return graph;
@@ -27,16 +28,10 @@ const shortestDist = function (graph, x, y) {
   return graph.shortestPath(x, y).weight;
 };
 
-// Tulosta verkko serialize() -metodilla.
-
-// Suorita verkolle topologicalSort() -metodi ja tulosta sen lopputulos.
-// Kirjoita kommenttiin miksi topologinen lajittelu tuottaa saamasi lopputuloksen.
-
-//Tulosta lyhin etäisyys solmujen 'a' ja 'e' välillä.
 const myGraph = createGraph(values);
 console.log(myGraph.serialize());
 
-/*Topologinen lajittelulla voidaan järjestää suunnattu verkko jonoksi.
+/*Topologisella lajittelulla voidaan järjestää suunnattu verkko jonoksi.
 Jonoon lisätään ensiksi solmu johon ei ole viittauksia mistään muusta solmusta. Tämän jälkeen voidaan lisätä vain solmu
 johon viittaavissa solmuissa on jo käyty. Eli esimerksi jos jonossa on ensimmäisenä solmu a niin seuraava lisättävä solmu
 ei voi olla c koska emme ole käyneet vielä b solmussa josta on myös viittaus c solmuun*/

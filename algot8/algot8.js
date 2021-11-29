@@ -19,24 +19,6 @@
 const jsregression = require('js-regression'); // js-regression -kirjastomoduuli
 
 /*
-TrainingData on on tunnettua (hatusta vedettyä) dataa siitä tilaako tietyn
-ikäinen henkilö paperille painettua sanomalehteä: 0==ei, 1==kyllä.
-Dataa on esimerkissä vain todella vähän.
-*/
-// const trainingData = [
-//   [18, 0],
-//   [20, 0],
-//   [24, 0],
-//   [30, 0],
-//   [32, 1],
-//   [40, 0],
-//   [45, 1],
-//   [51, 0],
-//   [60, 1],
-//   [65, 1],
-// ];
-
-/*
 TrainingData on on tunnettua (hatusta vedettyä) dataa, joka kertoo, onko henkilö [ikä, sukupuoli (1==m, 2==n),
 vuositulot tuhatta euroa, ostanut hilavitkuttimen (0==ei, 1==kyllä)].
 */

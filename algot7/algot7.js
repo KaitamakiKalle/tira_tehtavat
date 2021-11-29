@@ -1,8 +1,13 @@
+// Haetaan kirjasto polynomista regressioita varten
 const PolynomialRegression = require('ml-regression-polynomial');
 
+// predictPopulation ennustaa väkiluvun kasvua annetujen parametrien perusteella
 function predictPopulation(vuosi, x, y, degree) {
+  // Kun luodaan regression olio se laskee kulma kertoimen tunnetujen arvojen perusteella. degree säätää suoran "jyrkyyttä"
+  // millä voidaan säätää tulosta paremmaksi.
   const regression = new PolynomialRegression(x, y, degree);
 
+  // Palautetaan kokonaisluvuksi pyöristetty arvio väkiluvusta annettuna vuonna kirjaston _predict metodia hyödyntäen
   return Math.round(regression._predict(vuosi));
 }
 const x = [1960, 1970, 1980, 1990, 2000, 2010];

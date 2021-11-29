@@ -1,3 +1,4 @@
+// Haetaan kirjasto kekoa varten
 const Heap = require('heap');
 
 //Funktio keon luomiseksi taulukosta

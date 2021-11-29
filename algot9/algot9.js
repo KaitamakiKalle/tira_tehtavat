@@ -1,6 +1,8 @@
+// Bayesin naiivia klassifikaatiota varten haettu kirjasto
 const BayesClassifier = require('bayes-classifier');
 const mailClassifier = new BayesClassifier();
 
+// goodMail sisältää hyvän postin, algoritmi oppii tästä mitä sanoja esiintyy ja kuinka usein hyvässä postissa
 const goodMail = [
   'Tärkeää asiaa lainahakemuksestanne',
   'Tervehdys täältä pohjoisesta isovanhemmiltasi',
@@ -8,6 +10,8 @@ const goodMail = [
   'Hei, tilauksenne on lähetetty',
   'Pyytämäsi tarjous autosta',
 ];
+
+// trashMail sisältää roskapostin, algoritmi oppii datan perusteella mitä sanoja esiintyy paljon roskapostissa
 const trashMail = [
   'NYT SUPERHYPER TARJOUSPÄIVÄT',
   'Oletko jo nähnyt uudet tarjouksemme',
@@ -15,11 +19,14 @@ const trashMail = [
   'Tiesitkö tästä ihmeaineesta joka saa lihaksesi kasvamaan vauhdilla',
 ];
 
+//Luodaan luokittelut Normal ja Trash ja syötetään parametreina harjoitusdata
 mailClassifier.addDocuments(goodMail, 'Normal');
 mailClassifier.addDocuments(trashMail, 'Trash');
 
+// Harjoitetaan algoritmi
 mailClassifier.train();
 
+// classify metodi luokitelee annetun tekstin normaaliksi tai roskapostiksi
 console.log(mailClassifier.classify('Hei, asiaa vakuutuksestanne'));
 console.log(mailClassifier.classify('NYT ULTRAHYPER TARJOUS vain tänään'));
 console.log(mailClassifier.classify('Tässä pyytämäsi liittymätarjous'));
